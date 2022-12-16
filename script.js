@@ -17,9 +17,7 @@ function clean() {
 }
 
 function calc() {
-  if (displayRes) {
-    const calc = displayRes.innerHTML;
-    displayOp.innerHTML = displayRes.innerHTML;
-    displayRes.innerHTML = eval(calc);
-  }
+  const calc = displayRes.innerHTML;
+  displayOp.innerHTML = displayRes.innerHTML;
+  displayRes.innerHTML = eval(calc);
 }
