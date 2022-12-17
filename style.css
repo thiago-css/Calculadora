@@ -24,45 +24,30 @@ body {
   max-width: 500px;
 }
 .display {
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
   margin-bottom: 30px;
   border-radius: 10px;
-  text-align: right;
   color: white;
-  height: 5rem;
+  height: 4.5rem;
   word-wrap: break-word;
   font-size: 1.5rem;
   letter-spacing: 3px;
   border: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
 }
-.display-operations {
-  height: 30%;
+.current-operand {
   opacity: 0.5;
 }
-.display-result {
-  height: 70%;
+.result-operand {
   font-size: 1.5rem;
 }
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, auto);
   gap: 15px;
-}
-.operator {
-  color: var(--operator-color);
-  opacity: 0.75;
-}
-.clean-all,
-.delete-data,
-.dot {
-  color: var(--operator-color);
-}
-.equals {
-  grid-column: span 2;
-  background-color: var(--operator-color);
-}
-.clean-all {
-  grid-column: span 2;
 }
 button {
   background-color: var(--bg-color);
@@ -73,6 +58,22 @@ button {
 }
 button:hover {
   filter: brightness(2);
+}
+.operator {
+  color: var(--operator-color);
+  opacity: 0.75;
+}
+.clean-all,
+.backspace,
+.dot {
+  color: var(--operator-color);
+}
+.equals {
+  grid-column: span 2;
+  background-color: var(--operator-color);
+}
+.clean-all {
+  grid-column: span 2;
 }
 
 @media (min-width: 500px) {
@@ -86,12 +87,12 @@ button:hover {
     border-radius: 20px;
   }
   .display {
-    height: 7rem;
+    height: 6rem;
   }
-  .display-operations {
+  .current-operand {
     font-size: 1.5rem;
   }
-  .display-result {
+  .result-operand {
     font-size: 2rem;
   }
   button {

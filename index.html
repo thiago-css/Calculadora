@@ -15,8 +15,8 @@
   <body>
     <section class="calculator">
       <section class="display">
-        <div class="display-operations"></div>
-        <div class="display-result"></div>
+        <div class="current-operand"></div>
+        <div class="result-operand"></div>
       </section>
       <section class="buttons">
         <button class="number" onclick="insert('7')">7</button>
@@ -31,14 +31,14 @@
         <button class="number" onclick="insert('2')">2</button>
         <button class="number" onclick="insert('3')">3</button>
         <button class="operator" onclick="insert('-')">-</button>
-        <button class="delete-data" onclick="backspace()">
+        <button class="backspace">
           <i class="fa-solid fa-delete-left"></i>
         </button>
         <button class="number" onclick="insert('0')">0</button>
         <button class="number dot" onclick="insert('.')">.</button>
         <button class="operator" onclick="insert('+')">+</button>
-        <button class="clean-all" onclick="clean()">AC</button>
-        <button class="equals" onclick="calc()">=</button>
+        <button class="clean-all">AC</button>
+        <button class="equals">=</button>
       </section>
     </section>
   </body>

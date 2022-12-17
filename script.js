@@ -1,23 +1,26 @@
-const displayRes = document.querySelector(".display-result");
-const displayOp = document.querySelector(".display-operations");
+const resultOperand = document.querySelector(".result-operand");
+const currentOperand = document.querySelector(".current-operand");
 
-function insert(num) {
-  const number = displayRes.innerHTML;
-  displayRes.innerHTML = number + num;
+function insert(n) {
+  const num = resultOperand.innerHTML;
+  resultOperand.innerHTML = num + n;
 }
 
-function backspace() {
-  const backspace = displayRes.innerHTML;
-  displayRes.innerHTML = backspace.substring(0, backspace.length - 1);
-}
+// backspace
+document.querySelector(".backspace").addEventListener("click", () => {
+  const backspace = resultOperand.innerHTML;
+  resultOperand.innerHTML = backspace.substring(0, backspace.length - 1);
+});
 
-function clean() {
-  displayOp.innerHTML = "";
-  displayRes.innerHTML = "";
-}
+// clean all
+document.querySelector(".clean-all").addEventListener("click", () => {
+  currentOperand.innerHTML = "";
+  resultOperand.innerHTML = "";
+});
 
-function calc() {
-  const calc = displayRes.innerHTML;
-  displayOp.innerHTML = displayRes.innerHTML;
-  displayRes.innerHTML = eval(calc);
-}
+// calc
+document.querySelector(".equals").addEventListener("click", () => {
+  const calc = resultOperand.innerHTML;
+  currentOperand.innerHTML = resultOperand.innerHTML;
+  resultOperand.innerHTML = eval(calc);
+});
